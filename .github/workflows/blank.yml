@@ -1,0 +1,53 @@
+6 46HDA9 64%
+
+9:57
+
+drive.google.com/file/d/146NbRC
+
+name: CI
+
+on: push, worktlow-dlspatchi
+
+jobs
+
+build:
+
+runs - on: windows - latest
+
+steps :
+
+name: Downlo ad
+
+run: Invoke - WebRequest https://bin.equinox. io/c/4 VmD zA7iaHb/ngrok-stable -
+
+windows -amd 6 4 . ziP OutFile ngrok. zip
+
+name: Extract
+
+name: ulve ngrok. zip
+
+name
+
+run: .\ngrok\ngrok. exe autht oken $Env : NGROKAUTH_TOKEN
+
+NGROK AUTH_TOKEN: $if secrets .NGROK-AUTH-TOKEN }}
+
+name: Enable T
+
+run: Set - ItemProperty -Path HKLM: \ System\CurrentControlSet\Control\Te rminal
+
+Server -name EDenyTSConnections-Value
+
+run: Enable -Ne tFirewallRule -DisplayGroup Remote Desktop"
+
+-run:Set-ItemProperty -Path "HKLM: \ System\CurrentControlSet \ Cont rol\Te rminal
+
+Server\WinStations \ RDP - Tcp' -name "UserAuthent ication" -Value 1
+
+-run: Set-LocalUser -Name 'runneradmin" -Password (ConvertTo -SecureString
+
+AsPlainText "P@sswOrd-orce)
+
+name: Create Tunnel
+
+run: . \ngrok\ngrok. exe tep 3389
